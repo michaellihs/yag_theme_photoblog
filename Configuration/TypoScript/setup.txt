@@ -1,0 +1,53 @@
+####################################################
+# YAG theme PhotoBlog
+#
+# @author Daniel Lienert <daniel@lienert.cc> 
+# @author Michael Knoll <knoll@punkt.de>
+####################################################
+
+# Include CSS for this theme
+page.includeCSS.yag_theme_photoBlog = EXT:yag_theme_photoblog/Resources/Public/CSS/styles.css
+
+# Copy default settings from default theme
+plugin.tx_yag.settings.themes.photoBlog < plugin.tx_yag.settings.themes.default
+
+# Some theme-specific settings
+plugin.tx_yag.settings.themes.photoBlog {
+
+   # We do not want to have paging
+   itemList.itemsPerPage = 0
+
+   includeLibJS = jQuery,jQueryShadowBox
+   includeLibCSS = jQueryShadowBox
+
+   resolutionConfigs {
+   
+      thumb {
+         maxW = 200
+         maxH = 200
+         quality = 
+      }
+      
+      lightbox {
+         maxW = 1200
+         maxH = 800
+      }
+      
+   }
+
+   controller {
+   
+      ItemList {
+         list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/ItemList/List.html
+      }
+      
+   }
+
+   itemList {
+      imageThumbPartial = EXT:yag_theme_photoblog/Resources/Private/Partials/ImageThumb.html
+   }
+   
+}
+
+
+module.tx_yag.settings.themes < plugin.tx_yag.settings.themes

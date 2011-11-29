@@ -1,0 +1,54 @@
+@CHARSET "UTF-8";
+
+div.tx-yag-theme-simpleblog-imagecontainer:after {
+    content: "."; 
+    display: block; 
+    height: 0;
+    clear: both; 
+    visibility: hidden;
+}
+
+div.tx-yag-theme-simpleblog-thumb {
+    float: left;
+    height: 200px;
+    width: 200px;
+    border: 1px solid;
+    border-color: #AAA #444 #444 #AAA;
+    margin: 10px 10px;
+    padding: 24px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -moz-box-shadow: 3px 3px 4px #aaa;
+    -webkit-box-shadow: 3px 3px 4px #aaa;
+    box-shadow: 3px 3px 4px #aaa;
+    /* For IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa')";
+    /* For IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa');
+}
+
+div.tx-yag-theme-simpleblog-thumb ul {
+    display: none;	
+}
+
+div.tx-yag-theme-simpleblog-thumb img {
+    border: 1px solid;
+    border-color: #444 #AAA #AAA #444;
+}
+
+div.tx-yag-theme-simpleblog-thumb-landscape img {
+    height: 133px;
+    width: 200px;
+    margin: 33px 0;
+}
+
+div.tx-yag-theme-simpleblog-thumb-portrait img {
+    height: 200px; 
+    width: 133px;
+    margin: 0 33px;
+}
+
+div.tx-yag-theme-simpleblog-thumb-square img {
+    height: 200px; 
+    width: 200px;
+    margin: 0;
+}

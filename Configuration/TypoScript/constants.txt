@@ -1,0 +1,14 @@
+plugin.tx_yagthemesimpleblog {
+	view {
+		# cat=plugin.tx_yagthemesimpleblog/file; type=string; label=Path to template root (FE)
+		templateRootPath = EXT:yag_theme_simpleblog/Resources/Private/Templates/
+		# cat=plugin.tx_yagthemesimpleblog/file; type=string; label=Path to template partials (FE)
+		partialRootPath = EXT:yag_theme_simpleblog/Resources/Private/Partials/
+		# cat=plugin.tx_yagthemesimpleblog/file; type=string; label=Path to template layouts (FE)
+		layoutRootPath = EXT:yag_theme_simpleblog/Resources/Private/Layouts/
+	}
+	persistence {
+		# cat=plugin.tx_yagthemesimpleblog//a; type=int+; label=Default storage PID
+		storagePid = 
+	}
+}

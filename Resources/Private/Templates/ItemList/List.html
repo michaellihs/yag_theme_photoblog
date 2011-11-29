@@ -1,0 +1,11 @@
+{namespace yag=Tx_Yag_ViewHelpers}
+
+
+<div class="tx-yag-theme-simpleblog-imagecontainer">
+    <f:for each="{listData}" key="rowIndex" as="listRow">       
+        <f:render partial="{config.itemListConfig.imageThumbPartial}" 
+          arguments="{config: config, image: listRow.image.value, 
+            rowIndex: listRow.specialValues.absoluteRowIndex, 
+            pager: pager, pagerCollection:pagerCollection}" />
+    </f:for>    
+</div>
