@@ -22,9 +22,10 @@ plugin.tx_yag.settings.themes.photoBlog {
 
    resolutionConfigs {
    
+      thumb >
       thumb {
-         maxW = 200
-         maxH = 200
+         width = 140c
+         height = 140c
          quality = 
       }
       
@@ -34,8 +35,18 @@ plugin.tx_yag.settings.themes.photoBlog {
       }
       
    }
+   
+   albumList.albumThumbPartial = EXT:yag_theme_photoblog/Resources/Private/Partials/AlbumThumb.html
 
    controller {
+   
+      Album {
+         list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Album/List.html
+      }
+      
+      Gallery {
+         index.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Gallery/Index.html	
+      }
    
       ItemList {
          list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/ItemList/List.html

@@ -1,6 +1,16 @@
 @CHARSET "UTF-8";
 
-div.tx-yag-theme-simpleblog-imagecontainer:after {
+.tx-yag-theme-photoblog-imagecontainer {
+	padding-top: 15px;
+	padding-left: 15px;	
+}
+
+.tx-yag-theme-photoblog-backlink {
+	padding-top: 15px;
+	padding-left: 15px;	
+}	
+
+div.tx-yag-theme-photoblog-imagecontainer:after {
     content: "."; 
     display: block; 
     height: 0;
@@ -8,47 +18,57 @@ div.tx-yag-theme-simpleblog-imagecontainer:after {
     visibility: hidden;
 }
 
-div.tx-yag-theme-simpleblog-thumb {
-    float: left;
-    height: 200px;
-    width: 200px;
-    border: 1px solid;
-    border-color: #AAA #444 #444 #AAA;
-    margin: 10px 10px;
-    padding: 24px;
-    -moz-border-radius: 3px 3px 3px 3px;
-    -moz-box-shadow: 3px 3px 4px #aaa;
-    -webkit-box-shadow: 3px 3px 4px #aaa;
-    box-shadow: 3px 3px 4px #aaa;
-    /* For IE 8 */
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa')";
-    /* For IE 5.5 - 7 */
-    filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#aaaaaa');
+div.tx-yag-theme-photoblog-thumb {
+    /*-moz-border-radius: 3px 3px 3px 3px; */
+    background-color: #F3F3F3;
+    border: 1px solid #DDDDDD;
+    margin: 1px;
+    padding: 7px;
+    width: 160px;
+    height: 160px;
 }
 
-div.tx-yag-theme-simpleblog-thumb ul {
-    display: none;	
+/* Use this for description beneath image */
+div.tx-yag-theme-photoblog-albumthumb {
+    /*-moz-border-radius: 3px 3px 3px 3px; */
+    background-color: #F3F3F3;
+    border: 1px solid #DDDDDD;
+    margin: 1px;
+    padding: 7px;
 }
 
-div.tx-yag-theme-simpleblog-thumb img {
+div.tx-yag-photoblog-album-thumb {
+    position: relative;
+}
+
+div.tx-yag-theme-photoblog-album-thumb-overlay {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: none;
+    height: 142px;
+    left: 0;
+    margin: 9px;
+    position: absolute;
+    top: 0;
+    width: 142px;
+}
+
+div.tx-yag-photoblog-album-thumb:hover div.tx-yag-theme-photoblog-album-thumb-overlay {
+    display: block;
+}
+
+div.tx-yag-theme-photoblog-thumb img {
     border: 1px solid;
     border-color: #444 #AAA #AAA #444;
 }
 
-div.tx-yag-theme-simpleblog-thumb-landscape img {
-    height: 133px;
-    width: 200px;
-    margin: 33px 0;
+/* yag containers */
+.tx-yag-items {
+	padding-left: 15px;
+	padding-top: 15px;
 }
 
-div.tx-yag-theme-simpleblog-thumb-portrait img {
-    height: 200px; 
-    width: 133px;
-    margin: 0 33px;
-}
-
-div.tx-yag-theme-simpleblog-thumb-square img {
-    height: 200px; 
-    width: 200px;
-    margin: 0;
+div.tx-yag-album-thumb-innerframe a:hover,
+div.tx-yag-album-thumb-innerframe a:focus {
+	display: block;
+	outline: none;
 }

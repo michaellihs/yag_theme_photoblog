@@ -11,7 +11,7 @@
 ########################################################################
 
 $EM_CONF[$_EXTKEY] = array(
-	'title' => 'YAG Theme Photoblog',
+	'title' => 'YAG Theme PhotoBlog',
 	'description' => 'Theme for YAG gallery for photoblogs.',
 	'category' => 'plugin',
 	'author' => 'Michael Knoll',
@@ -29,7 +29,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'version' => '0.0.1',
+	'version' => '0.0.0-dev',
 	'constraints' => array(
 		'depends' => array(
 			'cms' => '',

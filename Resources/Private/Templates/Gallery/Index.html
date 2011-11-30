@@ -1,0 +1,30 @@
+{namespace yag=Tx_Yag_ViewHelpers}
+{namespace extlist=Tx_PtExtlist_ViewHelpers}
+{namespace ptextbase=Tx_PtExtbase_ViewHelpers}
+
+<extlist:comment>
+<!--  
+Template for rendering list of albums of a gallery
+
+Here is a list of objects / variables that can be accessed in this template:
+
+Tx_PtExtlist_Domain_Model_List_ListData  listData               Items to be rendered
+Tx_PtExtlist_Domain_Model_Pager_PagerInterface pager            Pager
+Tx_PtExtlist_Domain_Model_Pager_PagerCollection pagerCollection Collection of pagers
+
+@package YAG
+@author Michael Knoll <mimi@kaktusteam.de>
+@author Daniel Lienert <daniel@lienert.cc>
+-->
+</extlist:comment>
+	
+<h1>Fotos</h1>
+	
+<div class="tx-yag-items">
+	<f:for each="{listData}" key="rowIndex" as="listRow">
+		<div class="tx-yag-thumb-outerframe tx-yag-album-thumb-outerframe" style="width:160px; height: 160px">
+			<f:render partial="{config.albumListConfig.albumThumbPartial}" arguments="{album: listRow.album.value, yagContext:yagContext}" />
+		</div>
+	</f:for>
+	<div style="clear:both;">&nbsp;</div>	
+</div>
