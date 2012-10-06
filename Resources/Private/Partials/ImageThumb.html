@@ -1,7 +1,12 @@
 {namespace yag=Tx_Yag_ViewHelpers}
 
 <div class="tx-yag-thumb-innerframe tx-yag-album-thumb-innerframe">
-    <a href="{yag:resource.image(item: image, resolutionName: 'lightbox')}" rel="shadowbox[images_{image.album.uid}]" title="{image.title}"> 
-        <yag:image item="{image}" resolutionName="thumb" alt="{image.title}"/>
-    </a>
+    <div>
+        <a href="/{yag:resource.image(item: image, resolutionName: 'lightbox')}"
+           class="fancybox"
+           rel="album_{image.album.uid}"
+           title="<span>{image.title}</span><p>{image.description}</p>">
+            <img src="/{yag:resource.image(item: image, resolutionName: 'thumb')}" alt="{image.title}" width="140" height="140"/>
+        </a>
+    </div>
 </div>

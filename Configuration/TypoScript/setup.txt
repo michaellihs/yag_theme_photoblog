@@ -10,54 +10,95 @@ page.includeCSS.yag_theme_photoBlog = EXT:yag_theme_photoblog/Resources/Public/C
 
 # Copy default settings from default theme
 plugin.tx_yag.settings.themes.photoBlog < plugin.tx_yag.settings.themes.default
+plugin.tx_yag.settings.themes.photoBlogList < plugin.tx_yag.settings.themes.default
 
 # Some theme-specific settings
-plugin.tx_yag.settings.themes.photoBlog {
+plugin.tx_yag.settings.themes {
 
-   # We do not want to have paging
-   itemList.itemsPerPage = 0
+    ## Shows Facebook-style preview of albums in blog list
+    photoBlogList {
+	itemList.showTitle = 1
+        itemList.itemsPerPage = 0
+        controller {
+            ItemList.list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Album/Preview.html
+        }
 
-   includeLibJS = jQuery,jQueryShadowBox
-   includeLibCSS = jQueryShadowBox
+        resolutionConfigs {
 
-   resolutionConfigs {
-   
-      thumb >
-      thumb {
-         width = 140c
-         height = 140c
-         quality = 
-      }
-      
-      lightbox {
-         maxW = 1200
-         maxH = 800
-      }
-      
-   }
-   
-   albumList.albumThumbPartial = EXT:yag_theme_photoblog/Resources/Private/Partials/AlbumThumb.html
+            firstThumb >
+            firstThumb {
+                width = 300c
+                height = 218c
+            }
 
-   controller {
-   
-      Album {
-         list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Album/List.html
-      }
-      
-      Gallery {
-         index.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Gallery/Index.html	
-      }
-   
-      ItemList {
-         list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/ItemList/List.html
-      }
-      
-   }
+            secondThumb >
+            secondThumb {
+                width = 140c
+                height = 100c
+            }
 
-   itemList {
-      imageThumbPartial = EXT:yag_theme_photoblog/Resources/Private/Partials/ImageThumb.html
-   }
+            bigThumb >
+            bigThumb {
+                width = 471c
+                height = 220c
+            }
+
+        }
+
+    }
+
+
+
+    ## Renders album view on detail page
+    photoBlog {
+
+        # We do not want to have paging
+        itemList.itemsPerPage = 0
+        albumList.itemsPerPage = 0
+
+        includeLibJS = jQuery,jQueryFancybox
+        includeLibCSS = jQueryFancybox
+
+        resolutionConfigs {
+
+          thumb >
+          thumb {
+             width = 140c
+             height = 140c
+             quality =
+          }
+
+          lightbox {
+             maxW = 1200
+             maxH = 800
+          }
+
+        }
+
+        albumList.albumThumbPartial = EXT:yag_theme_photoblog/Resources/Private/Partials/AlbumThumb.html
+
+        controller {
+
+          Album {
+             list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Album/List.html
+          }
+
+          Gallery {
+             index.template = EXT:yag_theme_photoblog/Resources/Private/Templates/Gallery/Index.html
+          }
+
+          ItemList {
+             list.template = EXT:yag_theme_photoblog/Resources/Private/Templates/ItemList/List.html
+          }
+
+        }
+
+        itemList {
+          imageThumbPartial = EXT:yag_theme_photoblog/Resources/Private/Partials/ImageThumb.html
+        }
    
+    }
+
 }
 
 

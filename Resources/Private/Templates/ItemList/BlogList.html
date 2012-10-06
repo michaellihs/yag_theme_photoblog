@@ -2,8 +2,6 @@
 
 <yag:Javascript.template templatePath="EXT:yag_theme_photoblog/Resources/Private/JsTemplates/FancyBox.js" arguments="{yagSettings: '{yag:Javascript.JsonSettings(tsPath:\'fancybox\', onlyKeyValuePairs:1)}'}"/>
 
-<h1>{album.name}</h1>
-
 <div class="tx-yag-theme-photoblog-imagecontainer">
     <f:for each="{listData}" key="rowIndex" as="listRow">     
  		<div class="tx-yag-thumb-outerframe tx-yag-album-thumb-outerframe" style="width:160px; height: 160px">  
@@ -14,5 +12,3 @@
 	    </div>
     </f:for>    
 </div>
-
-<a class="tx-yag-theme-photoblog-backlink" href="fotos/">Zurück zur Alben-Übersicht</a>

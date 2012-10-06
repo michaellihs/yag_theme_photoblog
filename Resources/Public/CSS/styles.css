@@ -42,14 +42,15 @@ div.tx-yag-photoblog-album-thumb {
 }
 
 div.tx-yag-theme-photoblog-album-thumb-overlay {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
     display: none;
-    height: 142px;
+    height: 140px;
     left: 0;
     margin: 9px;
     position: absolute;
     top: 0;
-    width: 142px;
+    width: 140px;
+    vertical-align: middle;
 }
 
 div.tx-yag-photoblog-album-thumb:hover div.tx-yag-theme-photoblog-album-thumb-overlay {
@@ -71,4 +72,16 @@ div.tx-yag-album-thumb-innerframe a:hover,
 div.tx-yag-album-thumb-innerframe a:focus {
 	display: block;
 	outline: none;
+}
+
+.tx-yag-photoblog-thumb-innerframe img, .tx-yag-photoblog-image img {
+    background-color: #F3F3F3;
+    border: 1px solid #DDDDDD;
+    margin: 1px;
+    padding: 7px;
+}
+
+.tx-yag-theme-photoblog-album-thumb-overlay-heading {
+	padding: 7px;
+	font-weight: bold;
 }

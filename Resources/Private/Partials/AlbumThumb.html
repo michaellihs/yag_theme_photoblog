@@ -16,14 +16,16 @@ Tx_Yag_Domain_Model_Album album               The album object
 </extlist:comment>
 
 
-<div class="tx-yag-thumb-innerframe tx-yag-album-thumb-innerframe tx-yag-photoblog-album-thumb">
+<div class="tx-yag-photoblog-thumb-innerframe tx-yag-album-thumb-innerframe tx-yag-photoblog-album-thumb">
 	<yag:link.album album="{album}">
 		<f:if condition="{album.itemCount} > 0">
 		    <f:then>
 		        <yag:image title="{album.name}" item="{album.thumb}" resolutionName="thumb" />
-			<div class="tx-yag-theme-photoblog-album-thumb-overlay">
-				<span>{album.name}</span>
-			</div>
+				<div class="tx-yag-theme-photoblog-album-thumb-overlay">
+					<div class="tx-yag-theme-photoblog-album-thumb-overlay-heading">{album.name}</div>
+					<div style="color: gray; font-size: 0.8em">{album.date->f:format.date(format:'d.m.Y')}</div>
+					<div style="color: gray; font-size: 0.8em;"><span>{album.itemCount} Bilder</div>
+				</div>
 		    </f:then>
 		    <f:else>
 		        <div><f:translate key="tx_yag_controller_album.noItems" /></div>
@@ -31,17 +33,3 @@ Tx_Yag_Domain_Model_Album album               The album object
 	    </f:if>
 	</yag:link.album>
 </div>
-
-<!--
-<div class="tx-yag-gallery-albuminfo" id="albumUid-{album.uid}" style="position: relative">
-	<div class="tx-yag-gallery-albumcaption">
-		{album.name}
-	</div>
-	<div class="tx-yag-gallery-itemcount">
-		{album.itemCount} <f:translate key="tx_yag_general.images" />
-	</div>
-		<div class="tx-yag-gallery-albumdescription">
-		<f:format.nl2br>{album.description}</f:format.nl2br>
-	</div>
-</div>
--->

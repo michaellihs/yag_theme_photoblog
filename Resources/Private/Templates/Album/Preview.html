@@ -1,0 +1,47 @@
+{namespace ptextbase=Tx_PtExtbase_ViewHelpers}
+{namespace yag=Tx_Yag_ViewHelpers}
+
+<extlist:comment>
+    <!--
+    Template for rendering an album.
+
+    Here is a list of objects / variables that can be accessed in this template:
+
+    Tx_PtExtlist_Domain_Model_List_ListData listData               List of items in album
+
+    @package YAG
+    @author Michael Knoll <mimi@kaktusteam.de>
+    @author Daniel Lienert <daniel@lienert.cc>
+    -->
+</extlist:comment>
+<div class="tx-yag-items">
+    <f:if condition="{listData.count} > 2">
+        <f:then>
+            <div class="tx-yag-thumb-innerframe" style="float:left">
+                <f:link.action controller="ItemList" action="submitFilter" extensionName="yag" pluginName="pi1" pageUid="335" arguments="{albumUid: album.uid}">
+                    <img src="/{yag:resource.image(item: listData.1.image.value, resolutionName: 'firstThumb')}" alt="{image.title}" width="310" height="218" />
+                </f:link.action>
+            </div>
+            <div class="tx-yag-thumb-innerframe" style="float:left;padding-bottom: 0">
+                <yag:link.album pageUid="335" album="{album}">
+                    <img src="/{yag:resource.image(item: listData.2.image.value, resolutionName: 'secondThumb')}" alt="{image.title}" width="140" height="100" />
+                </yag:link.album>
+            </div>
+            <div class="tx-yag-thumb-innerframe" style="float:left;padding-bottom: 0">
+                <yag:link.album pageUid="335" album="{album}">
+                    <img src="/{yag:resource.image(item: listData.3.image.value, resolutionName: 'secondThumb')}" alt="{image.title}" width="140" height="100" />
+                </yag:link.album>
+            </div>
+        </f:then>
+        <f:else>
+            <div class="tx-yag-thumb-innerframe">
+                <yag:link.album pageUid="335" album="{album}">
+                    <img src="/{yag:resource.image(item: listData.1.image.value, resolutionName: 'bigThumb')}" alt="{image.title}" width="471" height="220" />
+                </yag:link.album>
+            </div>
+        </f:else>
+    </f:if>
+
+    <div style="clear:both;">&nbsp;</div>
+</div>
+
